@@ -1,0 +1,20 @@
+#uses httpyac extension
+
+#vai falhar pq passa a media errada
+POST http://localhost:5293/Service1
+
+
+#falhar pois falta o payload
+POST http://localhost:5293/Service1
+Content-Type: application/xml
+
+
+#correto com payload
+POST http://localhost:5293/Service1
+Content-Type: application/xml
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://some.com/service/">
+    <soap:Header/>
+    <soap:Body>
+        <ser:GetWetherForecast/>
+    </soap:Body>
+</soap:Envelope>
